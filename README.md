@@ -2,7 +2,7 @@
 
 A ROS2 Jazzy project demonstrating a robot controller with multi-directional movement commands and obstacle detection using sensor fusion.
 
-## 🎯 Project Overview
+## Project Overview
 
 This project implements:
 - **Multi-Directional Control**: Forward, backward, strafe left/right, rotate left/right
@@ -10,7 +10,7 @@ This project implements:
 - **Emergency Stop**: Automatic velocity halt when obstacles detected
 - **ROS2 Service Interface**: Direction commands via service calls
 
-## 📋 Architecture
+##  Architecture
 
 ```
 ┌─────────────────────────────────────────┐
@@ -35,7 +35,7 @@ This project implements:
 └─────────────────────────────────────────┘
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - ROS2 Jazzy
@@ -62,7 +62,7 @@ source install/setup.bash
 ros2 service call /command_direction robot_controller/srv/DirectionCommand "{direction: 'forward'}"
 ```
 
-## 📡 Available Commands
+##  Available Commands
 
 ### Direction Commands
 Send via the `/command_direction` service:
@@ -90,7 +90,7 @@ ros2 service call /command_direction robot_controller/srv/DirectionCommand "{dir
 ros2 service call /command_direction robot_controller/srv/DirectionCommand "{direction: 'stop'}"
 ```
 
-## 📊 Topics
+## Topics
 
 ### Published Topics
 - `/cmd_vel` (geometry_msgs/Twist): Raw velocity commands
@@ -99,7 +99,7 @@ ros2 service call /command_direction robot_controller/srv/DirectionCommand "{dir
 ### Subscribed Topics
 - `/scan` (sensor_msgs/LaserScan): Laser scanner data for obstacle detection
 
-## 🛡️ Sensor Fusion & Safety
+## Sensor Fusion & Safety
 
 The sensor fusion node:
 1. **Subscribes** to LaserScan data
@@ -127,7 +127,7 @@ ros2 topic pub /scan sensor_msgs/msg/LaserScan \
     ranges: [10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]}" -r 10
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ros2_robot_navigator/
@@ -148,7 +148,7 @@ ros2_robot_navigator/
 └── README.md
 ```
 
-## 🔧 Implementation Details
+##  Implementation Details
 
 ### Velocity Commander Node
 - **Type**: C++ ROS2 Node
@@ -165,17 +165,17 @@ ros2_robot_navigator/
   - Implements emergency stop logic
   - Publishes safe commands to `/safe_cmd_vel`
 
-## 🎓 Learning Outcomes
+##  Learning Outcomes
 
 This project demonstrates:
-- ✅ ROS2 package structure and build system
-- ✅ C++ node implementation with publishers/subscribers
-- ✅ Custom ROS2 service definitions
-- ✅ Launch file configuration
-- ✅ Sensor data processing and fusion
-- ✅ Safety-critical control logic
+-  ROS2 package structure and build system
+-  C++ node implementation with publishers/subscribers
+-  Custom ROS2 service definitions
+-  Launch file configuration
+-  Sensor data processing and fusion
+-  Safety-critical control logic
 
-## 🚀 Future Extensions
+##  Future Extensions
 
 - Integrate with Gazebo simulation
 - Add camera-based perception
@@ -184,7 +184,7 @@ This project demonstrates:
 - Add reinforcement learning for gait optimization
 - Integrate NVIDIA GR00T for imitation learning
 
-## 📝 Notes
+##  Notes
 
 - Obstacle threshold: 0.3m (configurable in sensor_fusion.cpp)
 - Velocity commands: 0.5 m/s linear, 0.5 rad/s angular
@@ -192,4 +192,3 @@ This project demonstrates:
 
 ---
 
-**Created for: Innovation Hacking Team @ [www.innovation-hacking.com](https://www.innovation-hacking.com)**
