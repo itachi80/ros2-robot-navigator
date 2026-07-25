@@ -4,14 +4,14 @@
 source /opt/ros/jazzy/setup.bash
 source ~/ros2_robot_navigator/install/setup.bash
 
-echo "🤖 Robot Navigator - Command Tester"
+echo " Robot Navigator - Command Tester"
 echo "===================================="
 echo ""
 
 # Function to send command
 send_command() {
     local direction=$1
-    echo "📤 Sending command: $direction"
+    echo " Sending command: $direction"
     ros2 service call /command_direction robot_controller/srv/DirectionCommand "{direction: '$direction'}"
     sleep 1
 }
@@ -28,4 +28,4 @@ send_command "rotate_right"
 send_command "stop"
 
 echo ""
-echo "✅ All tests completed!"
+echo " All tests completed!"
