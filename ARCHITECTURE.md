@@ -106,4 +106,3 @@ string message
 
 ---
 
-**For questions or extensions, see www.innovation-hacking.com**
