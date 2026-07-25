@@ -75,7 +75,7 @@ private:
         // Emergency stop if obstacle ahead and moving forward
         if (obstacle_detected_ && msg->linear.x > 0.0) {
             RCLCPP_ERROR(this->get_logger(), 
-                "⛔ EMERGENCY STOP! Obstacle at %.2f m", min_distance_);
+                " EMERGENCY STOP! Obstacle at %.2f m", min_distance_);
             safe_velocity.linear.x = 0.0;
             safe_velocity.linear.y = 0.0;
             safe_velocity.angular.z = 0.0;
